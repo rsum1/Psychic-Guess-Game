@@ -1,5 +1,4 @@
 //INITIALIZATION
-
 let guesses = 8
 let wins = 0
 let losses = 0
@@ -29,7 +28,7 @@ let letterPool = ["a", "b", "c", "d", "e", "f"]
 //if letter press matches letter in array, display letter
 //else, decrement guesses by one
 
-//if all letters in word have been pressed, increment wins, retrieve new game word
+//if all letters in word have been presse d, increment wins, retrieve new game word
 
 // MAIN PROCESS
 // ================================
