@@ -4,14 +4,12 @@ let guessRemain = 8
 let wins = 0
 let losses = 0
 let badGuess = 0
-let letterPool = ["a", "b", "c", "d", "e", "f"]
+let letterPool = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+    'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 var winsText = document.getElementById("wins")
 var lossesText = document.getElementById("losses")
 var guessRemainText = document.getElementById("guessRemain")
-//FUNCTIONS
-//========================
-
 
 // STARTING WORD
 // ================================
@@ -21,8 +19,8 @@ function Random() {
 }
 gameLetter = Random()
 
-//\\//\\//\VIEW FIRT WORD
-// console.log(gameLetter)
+//\\//\\//\VIEW FIRST WORD
+console.log(gameLetter)
 
 document.onkeyup = function (event) {
 
@@ -54,25 +52,4 @@ document.onkeyup = function (event) {
     winsText.textContent = "Wins: " + wins
     lossesText.textContent = "Losses: " + losses
     guessRemainText.textContent = "Guesses Left: " + guessRemain
-    // console.log(guess)
-    console.log(`wins: ${wins}`)
-    console.log(`losses: ${losses}`)
-    console.log(`bad guesses: ${badGuess}`)
 }
-
-
-
-    //Test if letter is part of word
-    // if (condition) {
-
-    // } else {
-
-    // }
-
-    //Display incorrect letter
-    // let badGuess = document.createElement('h1')
-    // badGuess.textContent = event.key
-    // document.getElementById("word").append(badGuess)
-
-
-        // document.getElementById(`wins`).innerHTML(`${wins}`)
