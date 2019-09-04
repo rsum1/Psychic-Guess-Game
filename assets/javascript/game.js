@@ -1,43 +1,28 @@
 //INITIALIZATION
-let guesses = 8
+//=====================
+let guessRemain = 8
 let wins = 0
 let losses = 0
 let badGuess = 0
-// let wordPool = ["dog", "cat", "bird", "apple", "orange", "purple", "orange"]
 let letterPool = ["a", "b", "c", "d", "e", "f"]
-// console.log(gameWord[1])
 
-//select random word
-// var gameWord = wordPool[Math.floor(Math.random()*wordPool.length)];
-// var gameLetter = letterPool[Math.floor(Math.random() * letterPool.length)];
-
-// console.log(gameWord)
-// console.log(gameLetter)
-//========================
-
-
+var winsText = document.getElementById("wins")
+var lossesText = document.getElementById("losses")
+var guessRemainText = document.getElementById("guessRemain")
 //FUNCTIONS
 //========================
 
-//retrieve game word
 
-//break down game word by letter into array
-
-//listen for letter being pressed
-
-//if letter press matches letter in array, display letter
-//else, decrement guesses by one
-
-//if all letters in word have been presse d, increment wins, retrieve new game word
-
-// MAIN PROCESS
+// STARTING WORD
 // ================================
 
 function Random() {
     return letterPool[Math.floor(Math.random() * letterPool.length)]
 }
 gameLetter = Random()
-console.log(gameLetter)
+
+//\\//\\//\VIEW FIRT WORD
+// console.log(gameLetter)
 
 document.onkeyup = function (event) {
 
@@ -48,22 +33,27 @@ document.onkeyup = function (event) {
         if (guess === gameLetter) {
             alert(`You Win`)
             wins++
-            badGuess = 0
+            guessRemain = 8
             function Random() {
                 return letterPool[Math.floor(Math.random() * letterPool.length)]
             }
             gameLetter = Random()
             console.log(`next letter : ${gameLetter}`)
         }
-        else if (badGuess < 7) {
-            badGuess++
+        else if (guessRemain > 1) {
+            guessRemain--
         }
         else {
+            guessRemain = 0
             losses++
-            badGuess = 0
+            guessRemain = 8
             alert('You Lose')
         }
     }
+
+    winsText.textContent = "Wins: " + wins
+    lossesText.textContent = "Losses: " + losses
+    guessRemainText.textContent = "Guesses Left: " + guessRemain
     // console.log(guess)
     console.log(`wins: ${wins}`)
     console.log(`losses: ${losses}`)
